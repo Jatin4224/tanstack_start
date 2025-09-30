@@ -1,39 +1,37 @@
+// app/routes/index.tsx
 import { createFileRoute } from '@tanstack/react-router'
-import logo from '../logo.svg'
+import Hero from '../components/Hero'
+import SkillBox from '../components/SkillBox'
 
-export const Route = createFileRoute('/')({
-  component: App,
-})
+export const Route = createFileRoute('/')({ component: Home })
 
-function App() {
+function Home() {
   return (
-    <div className="text-center">
-      <header className="min-h-screen flex flex-col items-center justify-center bg-[#282c34] text-white text-[calc(10px+2vmin)]">
-        <img
-          src={logo}
-          className="h-[40vmin] pointer-events-none animate-[spin_20s_linear_infinite]"
-          alt="logo"
-        />
-        <p>
-          Edit <code>src/routes/index.tsx</code> and save to reload.
-        </p>
-        <a
-          className="text-[#61dafb] hover:underline"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a
-          className="text-[#61dafb] hover:underline"
-          href="https://tanstack.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn TanStack
-        </a>
-      </header>
+    <div className="px-6 sm:px-10 py-10 bg-gray-900 min-h-screen text-gray-50">
+      <Hero />
+
+      <section className="mt-10">
+        <h2 className="text-2xl text-orange-500 font-semibold mb-3">
+          Languages
+        </h2>
+        <div className="mt-2.5 flex flex-wrap gap-3">
+          <SkillBox>HTML</SkillBox>
+          <SkillBox>CSS</SkillBox>
+          <SkillBox>JavaScript</SkillBox>
+          <SkillBox>TypeScript</SkillBox>
+        </div>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-2xl text-orange-500 font-semibold mb-3">Tools</h2>
+        <div className="mt-2.5 flex flex-wrap gap-3">
+          <SkillBox>React</SkillBox>
+          <SkillBox>GraphQL</SkillBox>
+          <SkillBox>Node.js</SkillBox>
+          <SkillBox>Socket.io</SkillBox>
+          <SkillBox>Next.js/Remix</SkillBox>
+        </div>
+      </section>
     </div>
   )
 }

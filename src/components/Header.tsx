@@ -1,25 +1,29 @@
+// app/components/Header.tsx
 import { Link } from '@tanstack/react-router'
 
-export default function Header() {
-  return (
-    <header className="p-2 flex gap-2 bg-white text-black justify-between">
-      <nav className="flex flex-row">
-        <div className="px-2 font-bold">
-          <Link to="/">Home</Link>
-        </div>
+const Header = () => (
+  <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
+    <div className="max-w-6xl mx-auto flex justify-between items-center px-8 py-4">
+      <h1 className="text-2xl font-bold text-orange-500"></h1>
+      <ul className="flex gap-6 text-gray-400 font-medium">
+        <li>
+          <Link to="/" className="hover:text-orange-400 transition">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/projects" className="hover:text-orange-400 transition">
+            Projects
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" className="hover:text-orange-400 transition">
+            Contact
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </header>
+)
 
-        <div className="px-2 font-bold">
-          <Link to="/demo/start/server-funcs">Start - Server Functions</Link>
-        </div>
-
-        <div className="px-2 font-bold">
-          <Link to="/demo/start/api-request">Start - API Request</Link>
-        </div>
-
-        <div className="px-2 font-bold">
-          <Link to="/demo/tanstack-query">TanStack Query</Link>
-        </div>
-      </nav>
-    </header>
-  )
-}
+export default Header

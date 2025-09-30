@@ -41,6 +41,11 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   }),
 
   shellComponent: RootDocument,
+  notFoundComponent: () => (
+    <h1 className="text-black text-4xl flex flex-center">
+      Arre! Yeh page exist hi nahi karta 😅
+    </h1>
+  ),
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
